@@ -4,7 +4,12 @@ const app = express();
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors");
+
 dotenv.config();
+
+// allows crows origin request
+app.use(cors());
 
 // connect to database
 mongoose.connect(
